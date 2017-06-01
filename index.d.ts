@@ -4,62 +4,36 @@
  * # Carry Your World #
  */
 
-declare const WORK
-declare const CARRY
-declare const MOVE
+declare const WORK: string  // "work"
+declare const CARRY: string  // "carry"
+declare const MOVE: string  // "move"
 
-declare const RESOURCE_ENERGY: any
-declare const ERR_NOT_IN_RANGE: any
-declare const FIND_SOURCES: any
+declare const RESOURCE_ENERGY: string  // "energy"
+declare const ERR_NOT_IN_RANGE: number  // -9
+declare const FIND_SOURCES: number  // 105
+declare const FIND_HOSTILE_CREEPS: string
+
+declare const STRUCTURE_EXTENSION: string  // "extension"
+declare const STRUCTURE_SPAWN: string  // "spawn"
+declare const STRUCTURE_TOWER: string  // "tower"
+
+/**
+ * Searchable consturction site in your room.
+ */
+declare const FIND_CONSTRUCTION_SITES: any
 
 declare const Game: {
-  spawns: any
+  spawns: {}
   creeps: {}
-}
+  structures: {}
 
-/**
- * Spawn object in your room.
- *
- * @class Spawn
- */
-declare class Spawn {
-  /**
-   * Create a creep worker.
-   *
-   * @param {Array<any>} options
-   * @param {string} workerName
-   * @returns {Creep}
-   *
-   * @memberof Spawn
-   */
-  createCreep(options: Array<any>, workerName: string): Creep
-}
-
-/**
- * Creep in your room.
- *
- * @class Creep
- */
-declare class Creep {
-  carry: {
-    energy: any
-  }
-
-  harvest(source: Source)
-
-  moveTo(soruce: Source)
-
-  memory: {
-    role: string
-  }
-
-  room: {
-    find (FIND_SOURCES)
-  }
-
-  transfer(spawn: Spawn, RESOURCE_ENERGY)
+  getObjectById(id: string): RoomObject
 }
 
 declare class Source {
 
+}
+
+declare class StructureExtension {
+  structureType: any
 }
